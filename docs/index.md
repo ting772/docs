@@ -10,12 +10,14 @@
 </div>
 <ul>
   <li v-for="post of posts">
-    <a :href="post.url">{{ post.frontmatter.title}}</a>
+    <a :href="withBase(post.url)">{{ post.frontmatter.title}}</a>
   </li>
 </ul>
 
 <script setup>
   import { data as _posts} from './data-loader/article.data.js'
+  import { withBase } from 'vitepress'
+
   let tags=ref(["全部"])
 
   function loadSelected(){

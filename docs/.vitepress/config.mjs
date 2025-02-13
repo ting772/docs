@@ -1,4 +1,3 @@
-import { defineConfig } from 'vitepress'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -11,7 +10,7 @@ function autoLoad(dirname) {
   let files = readdirSync(docPath)
   const hasIndex = files.some(path => path == 'index.md')
 
-  let arr, ret = [] as any[]
+  let arr, ret = []
 
   const readFile = (file) => readFileSync(join(docPath, file), { encoding: 'utf-8' })
   const toLink = (rpath) => "/" + join(dirname, rpath).replaceAll("\\", "/")
@@ -59,8 +58,17 @@ function autoLoad(dirname) {
   return ret
 }
 
-// https://vitepress.dev/reference/site-config
-export default defineConfig({
+
+let base = process.env.base
+if (base) {
+  base = base.replace(/^\/|\/$/, '')
+}
+
+base = base ? `/${base}/` : "/"
+console.log('当前base：', base ?? '未定义')
+
+export default {
+  base,
   title: "我的博客",
   description: "我的博客",
   themeConfig: {
@@ -122,6 +130,6 @@ export default defineConfig({
       }
     },
     ssr: { noExternal: ['element-plus'], },
-    base: process.env.base ?? "/"
-  }
-})
+    base
+  },
+}
