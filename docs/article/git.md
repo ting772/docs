@@ -57,4 +57,7 @@ tags: "git"
   - git show commitId --stat (查看提交被修改的文件有哪些)
   - git log --follow 文件路径 （查看改动该文件的提交的历史）
 
+## 合并不同历史的分支
+当本地仓库已经存在，新建远端仓库里有初始的相关提交时，常用的git pull会报出错误：**fatal: refusing to merge unrelated histories**。使用**git pull --allow-unrelated-histories**可以完成拉取合并。
+
 
