@@ -19,6 +19,8 @@
   let tags=ref(["全部"])
 
   function loadSelected(){
+    //ssr环境
+    if(typeof sessionStorage =='undefined') return '全部'
     return sessionStorage.getItem('home-selected-tag')??'全部'
   }
 
