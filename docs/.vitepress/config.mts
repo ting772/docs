@@ -121,6 +121,7 @@ export default defineConfig({
         "@img": resolve(__dirname, "../public/assets/img/"),
       }
     },
-    ssr: { noExternal: ['element-plus'], }
+    ssr: { noExternal: ['element-plus'], },
+    base: process.env.base ?? "/"
   }
 })
