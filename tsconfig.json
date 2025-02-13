@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "typeRoots": ["./types", "../node_modules/@types"],
+    "baseUrl": "./docs",
+    "paths": {
+      "@/*": ["./code/*"]
+    },
+    "target": "ES2023"
+  }
+}
