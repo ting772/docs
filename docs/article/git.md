@@ -35,6 +35,12 @@ tags: "git"
 ### 切换分支
   - git checkout 已有分支名
 
+### 移动分支到某个提交上
+  - git checkout 分支  
+    git reset --hard commit-hash
+
+  - git branch -f feature commit-hash
+
 ### 创建分支并切换到该分支
   - git checkout -b 新分支名   （从当前分支创建新分支，名称为“新分支名”）
   - git checkout -b 新分支名 origin/远端分支名 (新建分支并设置它的远端分支)
