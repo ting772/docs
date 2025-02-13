@@ -29,15 +29,15 @@ jobs:
           npm run docs:build
 
       - name: 展示即将上传artifact的资源
-        run: ls -alh ./dist
+        run: ls -alh ./docs/.vitepress/dist
 
       - name: 上传构件
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./docs/.vitepress/dist
           name: package
       - name: 部署到github page
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./docs/.vitepress/dist
