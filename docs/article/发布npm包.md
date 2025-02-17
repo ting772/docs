@@ -37,4 +37,5 @@ tags: "npm"
         "homepage":"",//项目主页
       }
     ```
-6. 以上正常后，npm publish发布 (后续发版前更新version字段)
+6. 如果要发布**作用域包**package.json文件中的**name**字段要定义成 **@你的npm账户名/包名**的形式
+7. 以上正常后，npm publish发布 (后续发版前更新version字段)

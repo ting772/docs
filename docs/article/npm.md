@@ -33,17 +33,8 @@ npm install -g 包名（全局安装）
 ## 查看npm命令帮助
 npm 命令 -h
 
-## 链接包
-npm link \<package_name\>
-- 工具包根目录下执行npm link会在npm全局环境中创建一个指向工具包本地的链接  
-
-    ![](/assets/img/2025-2-12/20250212100608.png)
-
-- 项目根目录下执行npm link package_name会在npm全局环境中创建一个指向该package的链接
-
-## 取消链接
-npm unlink -g \<package_name\>
-
-## 查看npm全局安装的位置
+## 查看npm包全局安装的位置
 npm root -g
 
+## 查看npm全局路径前缀
+npm prefix -g
