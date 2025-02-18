@@ -60,6 +60,16 @@ tags: "npm"
 },
 ```
 
+## bugs
+
+ 定义issue页
+
+ ```json
+ "bugs": {  
+    "url": ""  
+  }
+ ```
+
 ## files
 
 控制npm publish执行后哪些文件可以被上传到仓库  
