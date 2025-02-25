@@ -34,15 +34,16 @@
 
   
   tags.value.push(
-    ..._posts.reduce((acc,post)=>{
+    ...new Set(_posts.reduce((acc,post)=>{
           let ftags=post.frontmatter.tags
           if(ftags){
             let arr=ftags.split(/,|，/).filter(Boolean)
-            acc.add(...arr)
+            acc.push(...arr)
             post.tags=arr
           }
           return acc
-        },new Set())
+        },[])
+      )
   )
 
   let posts=computed(()=>{
@@ -65,6 +66,7 @@
 
 .tag{
   margin-right:10px;
+  margin-bottom:10px;
   cursor:pointer;
 }
 </style>

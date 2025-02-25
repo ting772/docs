@@ -66,3 +66,12 @@ tags: "git"
 - 本地压缩多次提交git rebase head~n 
 
 
+## 移除不小心提交到远程文件的追踪
+
+1. 将文件添加进.gitignore
+2. git rm --cached 文件路径 移出版本控制
+3. 提交
+
+## git push --tags 和 git push --follow-tags的区别
+--tags 推送本地所有的标签到远程
+--follow-tags 本地有，远端无的标签，并推送提交
